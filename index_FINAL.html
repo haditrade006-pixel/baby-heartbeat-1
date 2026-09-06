@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f2ea">
+  <meta name="description" content="اولین صدای قلب تو — یک خاطره برای تمام عمر">
+  <title>اولین صدای قلب تو | یک خاطره برای تمام عمر</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+    :root{
+      --ivory:#f8f4ed;
+      --paper:#fffdf9;
+      --ink:#332d29;
+      --muted:#776d65;
+      --gold:#ad8b57;
+      --gold-soft:#d9c7a7;
+      --line:rgba(173,139,87,.28);
+      --shadow:0 18px 55px rgba(66,48,32,.10);
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(217,199,167,.18), transparent 28%),
+        radial-gradient(circle at 90% 75%, rgba(226,191,194,.13), transparent 30%),
+        var(--ivory);
+      color:var(--ink);
+      font-family:"Vazirmatn",Tahoma,sans-serif;
+      line-height:1.9;
+    }
+
+    .page{
+      width:min(100%, 980px);
+      margin:auto;
+      padding:22px 16px 60px;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+      padding:62px 22px 46px;
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:rgba(255,253,249,.86);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+    }
+
+    .hero:before,
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:160px;
+      height:160px;
+      border:1px solid rgba(173,139,87,.18);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .hero:before{top:-90px;right:-75px}
+    .hero:after{bottom:-105px;left:-80px}
+
+    .eyebrow{
+      color:var(--gold);
+      font-size:13px;
+      letter-spacing:.16em;
+      margin-bottom:10px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(31px,6vw,54px);
+      font-weight:600;
+      letter-spacing:-.03em;
+    }
+
+    .subtitle{
+      margin:10px 0 22px;
+      color:var(--muted);
+      font-size:17px;
+      font-weight:300;
+    }
+
+    .meta{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .pill{
+      border:1px solid var(--gold-soft);
+      border-radius:999px;
+      padding:7px 15px;
+      background:#fffaf2;
+      color:#64584d;
+      font-size:13px;
+    }
+
+    .ecg{
+      width:min(100%,520px);
+      height:50px;
+      margin:24px auto 0;
+      opacity:.62;
+    }
+
+    .section{
+      margin-top:22px;
+      padding:28px;
+      background:rgba(255,253,249,.90);
+      border:1px solid var(--line);
+      border-radius:26px;
+      box-shadow:0 10px 32px rgba(66,48,32,.06);
+    }
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin:0 0 18px;
+      font-size:21px;
+      font-weight:600;
+    }
+
+    .section-title:before{
+      content:"";
+      width:8px;
+      height:8px;
+      flex:none;
+      border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 0 6px rgba(173,139,87,.12);
+    }
+
+    .caption{
+      margin:0 0 15px;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .photo{
+      width:100%;
+      max-height:760px;
+      object-fit:contain;
+      display:block;
+      border-radius:19px;
+      border:1px solid rgba(173,139,87,.22);
+      background:#f0ebe3;
+      box-shadow:0 12px 35px rgba(50,40,30,.08);
+    }
+
+    .photo.couple{
+      max-height:620px;
+      object-fit:cover;
+    }
+
+    .media-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .media-card{
+      padding:15px;
+      border:1px solid rgba(173,139,87,.20);
+      border-radius:20px;
+      background:#fffaf4;
+    }
+
+    .media-card h3{
+      margin:0 0 10px;
+      font-size:15px;
+      font-weight:500;
+    }
+
+    audio, video{
+      width:100%;
+      display:block;
+      border-radius:13px;
+    }
+
+    video{
+      background:#171411;
+      max-height:650px;
+    }
+
+    .memory-note{
+      text-align:center;
+      padding:8px 10px 0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    .quote{
+      margin:0;
+      padding:22px;
+      text-align:center;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      color:#62574f;
+      font-weight:300;
+      font-size:17px;
+    }
+
+    footer{
+      text-align:center;
+      padding:28px 10px 0;
+      color:#91867d;
+      font-size:12px;
+    }
+
+    .hidden{
+      display:none !important;
+    }
+
+    @media (max-width:700px){
+      .page{padding:10px 10px 40px}
+      .hero{padding:45px 18px 35px;border-radius:23px}
+      .section{padding:20px 15px;border-radius:21px}
+      .media-grid{grid-template-columns:1fr}
+      .section-title{font-size:19px}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <header class="hero">
+      <div class="eyebrow">A MEMORY TO KEEP FOREVER</div>
+      <h1>اولین صدای قلب تو</h1>
+      <p class="subtitle">یک خاطره برای تمام عمر</p>
+
+      <div class="meta">
+        <span class="pill">هفته ۸ بارداری</span>
+        <span class="pill">۱۴۰۵/۰۴/۲۲</span>
+      </div>
+
+      <svg class="ecg" viewBox="0 0 520 50" fill="none" aria-label="خط ضربان قلب">
+        <path d="M0 26H115 L132 26 L143 12 L154 39 L166 26 H220 L236 26 L247 20 L257 31 L268 26 H335 L350 26 L365 9 L379 42 L392 26 H520"
+              stroke="#ad8b57" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">اولین تصویر از تو</h2>
+      <p class="caption">همان تصویری که برای اولین بار نگاه‌مان را به سمت تو برد.</p>
+
+      <!-- نام این فایل را دقیقاً مطابق فایل موجود در ریشه مخزن GitHub نگه دار -->
+      <img
+        class="photo"
+        src="IMG_20260906_155553.jpg"
+        alt="اولین تصویر سونوگرافی"
+        loading="eager"
+        onerror="this.closest('.section').classList.add('hidden')">
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">لحظه‌ای که کنار هم منتظر تو بودیم</h2>
+      <p class="caption">عکس واقعی ما در روز سونوگرافی؛ ثبت یک صبح که دیگر هیچ‌وقت فراموش نمی‌شود.</p>
+
+      <img
+        class="photo couple"
+        src="IMG_20260905_214636.jpg"
+        alt="عکس مادر و پدر در روز سونوگرافی"
+        loading="lazy"
+        onerror="this.closest('.section').classList.add('hidden')">
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">صدای اولین ضربان قلبت</h2>
+      <p class="caption">این چند ثانیه، یکی از ارزشمندترین صداهایی است که تا همیشه برایمان می‌ماند.</p>
+
+      <div class="media-card">
+        <h3>🎧 صدای اولین ضربان قلبت</h3>
+        <audio controls preload="metadata">
+          <source src="صدای اولین ضربان قلب.mp3" type="audio/mpeg">
+          <source src="سونوگرافی صدای اولین ضربان‌ قلب.mp3" type="audio/mpeg">
+          مرورگر شما از پخش این فایل صوتی پشتیبانی نمی‌کند.
+        </audio>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">ویدئوی اولین سونوگرافی</h2>
+      <p class="caption">این ویدئو همان لحظه‌ای را نگه می‌دارد که تصویر و صدای تو برایمان واقعی‌تر شد.</p>
+
+      <div class="media-card">
+        <video controls playsinline preload="metadata">
+          <source src="اولین سونوگرافی.mp4" type="video/mp4">
+          <source src="اولین سونوگرافی.mov" type="video/quicktime">
+          مرورگر شما از پخش این ویدئو پشتیبانی نمی‌کند.
+        </video>
+      </div>
+
+      <p class="memory-note">
+        برای سازگاری بهتر با گوشی‌ها و مرورگرها، نسخه MP4 با کُدک H.264 را کنار فایل MOV قرار بده.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="quote">
+        «یک روز، سال‌ها بعد، وقتی این صفحه را دوباره می‌بینی،
+        یادت باشد که قبل از آن‌که تو ما را بشناسی،
+        ما عاشقانه منتظر آمدنت بودیم.»
+      </p>
+    </section>
+
+    <footer>
+      اولین صدای قلب تو · یک خاطره برای تمام عمر
+    </footer>
+
+  </main>
+</body>
+</html>
